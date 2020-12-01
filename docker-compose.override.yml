@@ -1,0 +1,18 @@
+version: '3.4'
+
+services:
+
+  hackernews.reverseproxy:
+    container_name: hackernews-reverseproxy
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - /home/rene/Documents/HackerNews.NET-Backend/certs:/home/hackernews/ssl
+
+    networks:
+      - hackernews
+
+networks:
+  hackernews:
+    name: hackernews

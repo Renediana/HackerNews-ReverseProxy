@@ -1,0 +1,9 @@
+version: "3.4"
+
+services:
+
+  hackernews.reverseproxy:
+    image: ${DOCKER_REGISTRY-}hackernewsreverseproxy
+    build:
+      context: .
+      dockerfile: Dockerfile
